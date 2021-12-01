@@ -1,6 +1,6 @@
-package service.service;
+package com.example.emprendedores.service;
 
-import entity.entity.Emprendedores;
+import com.example.emprendedores.entity.Emprendedores;
 
 import java.util.List;
 

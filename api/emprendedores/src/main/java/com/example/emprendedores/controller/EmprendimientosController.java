@@ -1,26 +1,32 @@
-package controller.controller;
+package com.example.emprendedores.controller;
 
-import entity.entity.Emprendedores;
-import entity.entity.Emprendimientos;
+import com.example.emprendedores.entity.Emprendimientos;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import service.service.IEmprendedoresService;
-import service.service.IEmprendimientosService;
+import com.example.emprendedores.service.IEmprendimientosService;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@RestController
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.PUT,RequestMethod.POST,RequestMethod.DELETE})
+@RequestMapping("emprendimientos")
 public class EmprendimientosController {
 
     @Autowired
     private IEmprendimientosService emprendimientosService;
 
-    @GetMapping("/emprendimientos")
+    @GetMapping("/all")
     public List<Emprendimientos> findAll(){
         //retornará todos los usuarios
         return emprendimientosService.findAll();
     }
 
-    @GetMapping("/emprendimientos/{emprendimientosId}")
+    @GetMapping("get/{emprendimientosId}")
     public Emprendimientos getEmprendimientos(@PathVariable int emprendimientosId){
         Emprendimientos emprendimientos = emprendimientosService.findById(emprendimientosId);
 
@@ -31,7 +37,7 @@ public class EmprendimientosController {
         return emprendimientos;
     }
 
-    @PostMapping("/emprendimientos")
+    @PostMapping("/add")
     public Emprendimientos addEmprendimientos(@RequestBody Emprendimientos emprendimientos) {
         emprendimientos.setId(0);
 
@@ -42,7 +48,7 @@ public class EmprendimientosController {
 
     }
 
-    @PutMapping("/emprendimientos")
+    @PutMapping("/update")
     public Emprendimientos updateEmprendimientos(@RequestBody Emprendimientos emprendimientos) {
 
         emprendimientosService.save(emprendimientos);
@@ -52,7 +58,7 @@ public class EmprendimientosController {
         return emprendimientos;
     }
 
-    @DeleteMapping("emprendimientos/{emprendimientosId}")
+    @DeleteMapping("delete/{emprendimientosId}")
     public String deteteEmprendimientos(@PathVariable int emprendimientosId) {
 
         Emprendimientos emprendimientos = emprendimientosService.findById(emprendimientosId);

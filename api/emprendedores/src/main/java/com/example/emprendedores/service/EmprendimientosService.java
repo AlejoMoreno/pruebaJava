@@ -1,8 +1,8 @@
-package service.service;
+package com.example.emprendedores.service;
 
-import dao.dao.EmprendimientosDao;
-import dao.dao.IEmprendimientosDao;
-import entity.entity.Emprendimientos;
+import com.example.emprendedores.dao.IEmprendimientosDao;
+import com.example.emprendedores.entity.Emprendedores;
+import com.example.emprendedores.entity.Emprendimientos;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -20,7 +20,7 @@ public class EmprendimientosService implements IEmprendimientosService{
 
     @Override
     public Emprendimientos findById(int id) {
-        Emprendimientos emprendimientos = emprendimientosDao.findById(id);
+        Emprendimientos emprendimientos = emprendimientosDao.getById(id);
         return emprendimientos;
     }
 

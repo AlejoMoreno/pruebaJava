@@ -1,29 +1,28 @@
-package controller.controller;
+package com.example.emprendedores.controller;
 
-import entity.entity.Emprendedores;
-import service.service.EmprendedoresService;
+import com.example.emprendedores.entity.Emprendedores;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import service.service.IEmprendedoresService;
+import com.example.emprendedores.service.IEmprendedoresService;
 
 import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.PUT,RequestMethod.POST,RequestMethod.DELETE})
-@RequestMapping("/api")
+@RequestMapping("emprendedores")
 
 public class EmprendedoresController {
 
     @Autowired
     private IEmprendedoresService emprendedoresService;
 
-    @GetMapping("/emprendedores")
+    @GetMapping("/all")
     public List<Emprendedores> findAll(){
         //retornará todos los usuarios
         return emprendedoresService.findAll();
     }
 
-    @GetMapping("/emprendedores/{emprendedoresId}")
+    @GetMapping("/get/{emprendedoresId}")
     public Emprendedores getEmprendedores(@PathVariable int emprendedoresId){
         Emprendedores emprendedores = emprendedoresService.findById(emprendedoresId);
 
@@ -34,7 +33,7 @@ public class EmprendedoresController {
         return emprendedores;
     }
 
-    @PostMapping("/emprendedores")
+    @PostMapping("/add")
     public Emprendedores addEmprendedores(@RequestBody Emprendedores emprendedores) {
         emprendedores.setId(0);
 
@@ -45,7 +44,7 @@ public class EmprendedoresController {
 
     }
 
-    @PutMapping("/emprendedores")
+    @PutMapping("/update")
     public Emprendedores updateEmprendedores(@RequestBody Emprendedores emprendedores) {
 
         emprendedoresService.save(emprendedores);
@@ -55,7 +54,7 @@ public class EmprendedoresController {
         return emprendedores;
     }
 
-    @DeleteMapping("emprendedores/{emprendedoresId}")
+    @DeleteMapping("delete/{emprendedoresId}")
     public String deteteUser(@PathVariable int emprendedoresId) {
 
         Emprendedores user = emprendedoresService.findById(emprendedoresId);

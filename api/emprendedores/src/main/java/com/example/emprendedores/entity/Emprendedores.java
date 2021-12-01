@@ -1,4 +1,4 @@
-package entity.entity;
+package com.example.emprendedores.entity;
 
 import javax.persistence.*;
 import java.util.Date;
