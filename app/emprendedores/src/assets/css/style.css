@@ -292,66 +292,6 @@ li {
 }
 
 
-/******************/
-/*     Button     */
-/******************/
-.btn {
-	color: white;
-	border-radius: 0;
-	border-width: 2px;
-	padding: 10px 30px;
-	border-image-slice: 1;
-	background-image: none;
-	background: transparent;
-	border-image-source: var(--gradient);
-	box-shadow: 5px 5px 0px 0px var(--secondary);
-}
-
-.btn:hover {
-	color: white;
-	box-shadow: none;
-	border-radius: 0;
-	padding: 10px 30px;
-	transform: translate(5px, 5px);
-}
-
-/* Email - Newsletter Button */
-.btn-secondary {
-	color: black;
-	border-width: 2px;
-	padding: 10px 30px;
-	border-image-slice: 1;
-	background-image: none;
-	background: transparent;
-	border-image-source: var(--gradient);
-}
-
-.btn-secondary:hover {
-	color: black;
-	padding: 10px 30px;
-	background-image: var(--gradient);
-}
-
-/* Other Pages Button */
-.btn-tertiary {
-	color: black;
-	border-radius: 0;
-	border-width: 2px;
-	padding: 10px 30px;
-	border-image-slice: 1;
-	background-image: none;
-	background: transparent;
-	border-image-source: var(--gradient);
-	box-shadow: 5px 5px 0px 0px var(--secondary);
-}
-
-.btn-tertiary:hover {
-	color: black;
-	box-shadow: none;
-	border-radius: 0;
-	padding: 10px 30px;
-	transform: translate(5px, 5px);
-}
 
 
 /********************/

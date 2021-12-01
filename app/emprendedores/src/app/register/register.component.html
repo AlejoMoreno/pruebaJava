@@ -1,0 +1,36 @@
+<section class="py-5 d-flex align-items-center" style="margin-left: 20%;">
+  <div class="submit-form">
+    <h4>Registro emprendedor</h4>
+    <i>Escribe en esta área<br><br></i>
+    <div>
+      <div class="form-group" style="width: 50%;">
+        <label for="nombres">Nombres</label>
+        <input type="text" class="form-control" name="nombres" [(ngModel)]="emprendedores.nombres" />
+      </div>
+      <div class="form-group" style="width: 50%;">
+        <label for="apellidos">Apellidos</label>
+        <input type="text" class="form-control" name="apellidos" [(ngModel)]="emprendedores.apellidos" />
+      </div>
+      <div class="form-group" style="width: 50%;">
+        <label for="correo">Correo</label>
+        <input type="text" class="form-control" name="correo" [(ngModel)]="emprendedores.correo" />
+      </div>
+      <div class="form-group" style="width: 50%;">
+        <label for="fecha_nacimiento">Fecha nacimieno</label>
+        <input type="date" class="form-control" name="fecha_nacimiento" [(ngModel)]="emprendedores.fecha_nacimiento" />
+      </div>
+
+      <div class="form-group" style="margin-top: 10px;">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut sit, eligendi exercitationem .
+      </div>
+
+      <div style="position: relative;top: -200px;left: 70%;" *ngIf="submitted">
+        <h3>Creado correctamente</h3>
+      </div>
+
+      <button style="margin-top:40px" (click)="createEmprendedor()" class="btn btn-success">Create</button>
+    </div>
+
+
+  </div>
+</section>

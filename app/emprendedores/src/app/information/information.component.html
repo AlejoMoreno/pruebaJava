@@ -1,0 +1,30 @@
+<section class="py-5 d-flex align-items-center" style="margin-left: 20%;">
+  <div class="submit-form">
+    <h4>Emprendedores</h4>
+    <i>Tabla de emprendedores<br><br></i>
+    <div>
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Correo</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of listEmprendedores">
+          <tr>
+            <td>{{ item.nombres }}</td>
+            <td>{{ item.apellidos }}</td>
+            <td>{{ item.correo }}</td>
+            <td><button class="btn btn-success" (click)="editar(item.id)">Editar</button></td>
+            <td><button class="btn btn-danger" (click)="eliminar(item.id)">Eliminar</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+</section>
